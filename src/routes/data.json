@@ -1,0 +1,15 @@
+[
+
+    {
+        "id":"1",
+        "titulo":"The Legend of Zelda",
+        "Saga":"Ocarina of time",
+        "genero":"aventura"
+    },
+    {
+        "id":"2",
+        "titulo":"Mario Bros",
+        "Saga":"Mario Kart",
+        "genero":"Carreras"
+    }
+]
