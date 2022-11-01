@@ -1,7 +1,7 @@
 [
 
     {
-        "ID_Punto_Venta":"1" ,
+        "id":"1" ,
         "Nombre_Punto_Venta":" Cafeteria cetys",
         "Articulos":{
                 "Articulo":{"ID_Articulo":"1"},

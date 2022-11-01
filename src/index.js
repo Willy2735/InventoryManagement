@@ -10,6 +10,7 @@ app.use(express.json());
 //Rutas
 app.use('/api/articulos',require("./routes/rutas_articulos"))
 app.use('/api/puntos_ventas',require("./routes/rutas_puntos_ventas"))
+app.use('/api/usuario',require("./routes/rutas_usuarios"))
 //Empezando el servidor
 app.listen(app.get("port"));
 console.log("test");

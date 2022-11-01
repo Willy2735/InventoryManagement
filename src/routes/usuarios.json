@@ -1,0 +1,17 @@
+[
+
+    {
+        "id":"1" ,
+        "Email":" amogus@imposter.sus",
+        "Articulos":{
+                "Articulo":{"ID_Articulo":"1"},
+                "Articulo2":{"ID_Articulo":"2"}
+        },
+        "puntos_venta":{
+                "punto_venta":{"ID_Punto_Venta":"1"},
+                "punto_venta1":{"ID_Punto_Venta":"2"}
+        },
+        "PassWord":"sussyamogus123"
+    }
+    
+]
