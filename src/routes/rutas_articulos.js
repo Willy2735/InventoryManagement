@@ -17,13 +17,13 @@ router.get('/:id',(req,res)=>{
     console.log(id)
 
 });
-//gg
+
 router.post('/',(req,res)=>{
-    const {titulo,Saga,genero}=req.body;
-    if(titulo&&Saga&&genero){
+    const {Nombre_Articulo,Precio,Tipo_Articulo,Descripcion,Cantidad,Imagen,Puntos_venta}=req.body;
+    if(Nombre_Articulo&&Precio&&Tipo_Articulo&&Descripcion&&Cantidad){
         const id=articulos.length+1;
-        const nuevo_juego={id,...req.body};
-        articulos.push(nuevo_juego);
+        const nuevo_articulo={id,...req.body};
+        articulos.push(nuevo_articulo);
         res.send(articulos);
     }else{
         res.status(500).json({error:"no data"});
