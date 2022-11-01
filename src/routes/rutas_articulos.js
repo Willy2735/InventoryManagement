@@ -17,6 +17,7 @@ router.get('/:id',(req,res)=>{
     console.log(id)
 
 });
+//amongo
 router.post('/',(req,res)=>{
     const {titulo,Saga,genero}=req.body;
     if(titulo&&Saga&&genero){
