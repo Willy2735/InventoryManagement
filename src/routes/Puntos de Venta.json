@@ -1,0 +1,14 @@
+[
+
+    {
+        "ID_Punto_Venta":"1" ,
+        "Nombre_Punto_Venta":" Cafeteria cetys",
+        "Articulos":{
+                "Articulo":{"ID_Articulo":"1"},
+                "Articulo2":{"ID_Articulo":"2"}
+            },
+    "Ganancias":"0",
+    "Imagen":"-----"
+    }
+    
+]

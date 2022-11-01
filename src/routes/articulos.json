@@ -2,14 +2,26 @@
 
     {
         "id":"1",
-        "titulo":"The Legend of Zelda",
-        "Saga":"Ocarina of time",
-        "genero":"aventura"
+        "Nombre_Articulo":"La laptop del ivan",
+        "Precio":"Gratis",
+        "Tipo_Articulo":"Electronico",
+        "Descripcion":"amogus",
+        "Imagen":"----",
+        "Cantidad":"1",
+        "puntos_venta":{
+            "puntos_venta1":{"ID_Punto_Venta":"1"}
+        }
     },
     {
         "id":"2",
-        "titulo":"Mario Bros",
-        "Saga":"Mario Kart",
-        "genero":"Carreras"
+        "Nombre_Articulo":"Amogus",
+        "Precio":"555",
+        "Tipo_Articulo":"Muevble",
+        "Descripcion":"amogus",
+        "Imagen":"----",
+        "Cantidad":"9",
+        "puntos_venta":{
+            "puntos_venta1":{"ID_Punto_Venta":"1"}
+        }
     }
 ]

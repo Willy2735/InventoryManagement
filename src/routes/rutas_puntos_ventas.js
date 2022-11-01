@@ -1,16 +1,16 @@
 const {Router}=require("express");
 const router=Router();
-const juegos=require("./data.json")
+const Ventas=require("./Puntos de Venta.json")
 router.get('/',(req,res)=>{
     
-    res.json(juegos);
+    res.json(Ventas);
 });
 router.get('/:id',(req,res)=>{
     
     const {id}=req.params;
-    juegos.forEach(juego => {
-        if(juego.id==id){
-            res.json(juego)
+    Ventas.forEach(tienda => {
+        if(tienda.id==id){
+            res.json(tienda)
         }
     });
 
@@ -18,12 +18,12 @@ router.get('/:id',(req,res)=>{
 
 });
 router.post('/',(req,res)=>{
-    const {titulo,Saga,genero}=req.body;
-    if(titulo&&Saga&&genero){
-        const id=juegos.length+1;
-        const nuevo_juego={...req.body,id};
-        juegos.push(nuevo_juego);
-        res.send(juegos);
+    const {Nombre_Punto_Venta,Ganancias,Imagen,Articulos}=req.body;
+    if(Nombre_Punto_Venta){
+        const id=Ventas.length+1;
+        const nueva_tienda={id,...req.body};
+        Ventas.push(nueva_tienda);
+        res.send(Ventas);
     }else{
         res.status(500).json({error:"no data"});
         res.send("ERROR");
