@@ -17,11 +17,12 @@ router.get('/:id',(req,res)=>{
     console.log(id)
 
 });
+//gg
 router.post('/',(req,res)=>{
     const {titulo,Saga,genero}=req.body;
     if(titulo&&Saga&&genero){
         const id=articulos.length+1;
-        const nuevo_juego={...req.body,id};
+        const nuevo_juego={id,...req.body};
         articulos.push(nuevo_juego);
         res.send(articulos);
     }else{
