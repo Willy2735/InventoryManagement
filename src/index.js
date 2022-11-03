@@ -1,6 +1,8 @@
+require('./database')
 const express= require("express");
 const app = express();
 const morgan = require("morgan");
+
 //Configuraciones 
 app.set("port",3000);
 app.set('json spaces',2);
