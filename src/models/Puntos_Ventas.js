@@ -1,20 +1,19 @@
 const { Schema,model } = require("mongoose")
 const mongoose= require("mongoose")
-new Schema({
+const ventaSchema=new Schema({
 
     nombre:{type:String, required:true},
-        
-        PASSWORD:{type:String, required:true},
-        EMAIL:{type:String,required:true},
+        Descripcion:{type:String,required:false},
         Imagen:{type:Image,required:false},
-        puntos_ventas:[{
-            type:mongoose.Schema.Types.ObjectId,
-            required:false,
-            ref:"Puntos_Ventas"
-        }],
+        Ganancias:{type:Number,required:false,default:0},
+
         articulos:[{
             type:mongoose.Schema.Types.ObjectId,
             required:false,
             ref:"articulos"
         }]
+},{
+    timestamps:true,
+    versionKey:false
 })
+module.exports=model('Puntos_Ventas',ventaSchema)
