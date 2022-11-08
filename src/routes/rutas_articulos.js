@@ -1,6 +1,6 @@
 const {Router}=require("express");
 const router=Router();
-const articulos=require("./articulos.json")
+
 const articulosCtrl=require('../Controllers/articulos.controller.js')
 router.get('/',articulosCtrl.getArticulos)
 router.get('/:id',articulosCtrl.getArticulo);
