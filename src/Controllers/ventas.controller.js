@@ -1,5 +1,6 @@
 const ventasCtrl={}
 const puntos_ventas= require('../models/Puntos_Ventas.js')
+const articulos= require('../models/articulos.js')
 ventasCtrl.getArticulos= async(req,res)=>{
     const items=await puntos_ventas.find();
     res.json(items)
@@ -20,5 +21,18 @@ ventasCtrl.deleteArticulo= async(req,res)=>{
 ventasCtrl.updateArticulo= async(req,res)=>{
     const item=await puntos_ventas.findByIdAndUpdate(req.params.id,req.body)
     res.send({message:'Articulo actualizado',item});
+};
+
+ventasCtrl.getArticulos_V= async(req,res)=>{
+    const item=await articulos.findById(req.params.id)
+    const item1=item.articulos;
+    res.json(item1)
+};
+ventasCtrl.addArticulo= async(req,res)=>{
+    const item=await articulos.findById(req.params.id)
+    const item1=await articulos.findById(req.params.idA)
+    item.articulos.push(item1)
+    item.save();
+    res.json(item)
 };
 module.exports=ventasCtrl

@@ -1,5 +1,7 @@
 const userCtrl={}
 const users= require('../models/user.js')
+const articulos= require('../models/articulos.js')
+const puntos_ventas= require('../models/Puntos_Ventas.js')
 userCtrl.getArticulos= async(req,res)=>{
     const items=await users.find();
     res.json(items)
@@ -24,7 +26,20 @@ userCtrl.getVentasUser= async(req,res)=>{
     const ventas=item.puntos_ventas;
     res.json(ventas)
 };
-
+userCtrl.addVentasUser= async(req,res)=>{
+    const item=await users.findById(req.params.id)
+    const tienda=await puntos_ventas.findById(req.params.idV)
+    item.puntos_ventas.push(tienda)
+    item.save();
+    res.json(item)
+};
+userCtrl.addArticulosUser= async(req,res)=>{
+    const item=await users.findById(req.params.id)
+    const articulo=await articulos.findById(req.params.idA)
+    item.articulos.push(articulo)
+    item.save();
+    res.json(item)
+};
 userCtrl.getArticuloUser= async(req,res)=>{
     const item=await users.findById(req.params.id)
     const articulos=item.articulos;
