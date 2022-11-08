@@ -6,7 +6,6 @@ const userSchema=new Schema({
         
         PASSWORD:{type:String, required:true},
         EMAIL:{type:String,required:true},
-        Imagen:{type:Image,required:false},
         puntos_ventas:[{
             type:mongoose.Schema.Types.ObjectId,
             required:false,

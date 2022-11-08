@@ -1,34 +1,11 @@
 const {Router}=require("express");
 const router=Router();
-const usuarios=require("./usuarios.json")
-router.get('/',(req,res)=>{
-    
-    res.json(usuarios);
-});
-router.get('/:id',(req,res)=>{
-    
-    const {id}=req.params;
-    usuarios.forEach(usuario => {
-        if(usuario.id==id){
-            res.json(usuario)
-        }
-    });
-
-    console.log(id)
-
-});
-
-router.post('/',(req,res)=>{
-    const {Email,Articulos,puntos_venta,PassWord}=req.body;
-    if(Email&&PassWord){
-        const id=usuarios.length+1;
-        const nuevo_usuario={id,...req.body};
-        usuarios.push(nuevo_usuario);
-        res.send(usuarios);
-    }else{
-        res.status(500).json({error:"no data"});
-        res.send("ERROR");
-    }
-    
-});
+const usersCtrl=require('../Controllers/usuarios.controller.js')
+router.get('/',usersCtrl.getArticulos)
+router.get('/:id',usersCtrl.getArticulo);
+router.get('/:id/Puntos_De_Venta',usersCtrl.getVentasUser);
+router.get('/:id/articulos',usersCtrl.getArticulossUser);
+router.delete('/:id',usersCtrl.deleteArticulo);
+router.put('/:id',usersCtrl.updateArticulo);
+router.post('/',usersCtrl.crearArticulos)
 module.exports = router;
