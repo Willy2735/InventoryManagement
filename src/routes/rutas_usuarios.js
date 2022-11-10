@@ -7,6 +7,8 @@ router.get('/:id/Puntos_De_Venta',usersCtrl.getVentasUser);
 router.get('/:id/articulos',usersCtrl.getArticulossUser);
 router.get('/:id/Puntos_De_Venta/:idV',usersCtrl.getVentaUser);
 router.get('/:id/articulos/:idA',usersCtrl.getArticuloUser);
+router.delete('/:id/Puntos_De_Venta/:idV',usersCtrl.deleteVentaUser);
+router.delete('/:id/articulos/:idA',usersCtrl.deleteArticuloUser);
 router.delete('/:id',usersCtrl.deleteArticulo);
 router.put('/:id',usersCtrl.updateArticulo);
 router.post('/',usersCtrl.crearArticulos)
