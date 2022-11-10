@@ -35,4 +35,16 @@ ventasCtrl.addArticulo= async(req,res)=>{
     item.save();
     res.json(item)
 };
+ventasCtrl.removeArticulo= async(req,res)=>{
+    const item=await puntos_ventas.findById(req.params.id)
+    const art=item.articulos;
+    art.forEach(element => {
+        
+        if(element.id==req.idA){
+            art.splice(art.indexOf(element),1)
+        }
+        
+    });
+    res.json(item)
+};
 module.exports=ventasCtrl

@@ -26,6 +26,18 @@ articulosCtrl.addVenta= async(req,res)=>{
     item.save();
     res.json(item)
 };
+ventasCtrl.removeVenta= async(req,res)=>{
+    const item=await articulos.findById(req.params.id)
+    const art=item.puntos_ventas;
+    art.forEach(element => {
+        
+        if(element.id==req.idA){
+            art.splice(art.indexOf(element),1)
+        }
+        
+    });
+    res.json(item)
+};
 articulosCtrl.deleteArticulo= async(req,res)=>{
     const item=await articulos.findByIdAndDelete(req.params.id)
     res.send({message:'Articulo eliminado',item});

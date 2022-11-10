@@ -8,4 +8,5 @@ router.delete('/:id',ventasCtrl.deleteArticulo);
 router.put('/:id',ventasCtrl.updateArticulo);
 router.post('/',ventasCtrl.crearArticulos)
 router.post('/:id/articulos/:idA',ventasCtrl.addArticulo);
+router.delete('/:id/Puntos_De_Venta/:idV',articulosCtrl.removeArticulo);
 module.exports = router;
