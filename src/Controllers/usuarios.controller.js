@@ -42,9 +42,9 @@ userCtrl.addArticulosUser= async(req,res)=>{
 };
 userCtrl.getArticuloUser= async(req,res)=>{
     const item=await users.findById(req.params.id)
-    const articulos=item.articulos;
-    const item2="";
-    articulos.forEach(element => {
+    const art=item.articulos;
+    const item2={};
+    art.forEach(element => {
         if(element.id==req.idA){
           item2 =element;
         }
@@ -54,12 +54,13 @@ userCtrl.getArticuloUser= async(req,res)=>{
 userCtrl.getVentaUser= async(req,res)=>{
     const item=await users.findById(req.params.id)
     const ventas=item.puntos_ventas;
-    const venta="";
+    const venta={};
     ventas.forEach(element => {
         if(element.id==req.idV){
           venta =element;
         }
     });
+
     res.json(venta)
 };
 userCtrl.deleteArticulo= async(req,res)=>{
@@ -70,5 +71,35 @@ userCtrl.updateArticulo= async(req,res)=>{
     const item=await users.findByIdAndUpdate(req.params.id,req.body)
     
     res.send({message:'Usuario actualizado',item});
+};
+userCtrl.deleteArticuloUser= async(req,res)=>{
+    const item=await users.findById(req.params.id)
+    const art=item.articulos;
+    
+    art.forEach(element => {
+        
+        if(element.id==req.idA){
+            art.splice(art.indexOf(element),1)
+           
+        articulos.findByIdAndDelete(element.id)
+        }
+        
+    });
+    
+    
+    res.send({message:'Articulo eliminado'});
+};
+userCtrl.deleteVentaUser= async(req,res)=>{
+    const item=await users.findById(req.params.id)
+    const ventas=item.puntos_ventas;
+    const venta={};
+    ventas.forEach(element => {
+        if(element.id==req.idV){
+            ventas.splice(ventas.indexOf(element),1)
+           
+            puntos_ventas.findByIdAndDelete(element.id)
+        }
+    });
+    res.json(venta)
 };
 module.exports=userCtrl
