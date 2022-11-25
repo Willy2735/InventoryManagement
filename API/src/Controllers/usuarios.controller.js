@@ -102,4 +102,15 @@ userCtrl.deleteVentaUser= async(req,res)=>{
     });
     res.json(venta)
 };
+userCtrl.LOGIN= async(req,res)=>{
+    const user= new users(req.body);
+    const US= await users.find();
+    US.forEach(element => {
+      if(element.EMAIL==user.EMAIL&&element.PASSWORD==user.PASSWORD){
+        res.send({message:'LOGIN EXITOSO'});
+        return;
+      }  
+    });
+    res.send({message:'EMAIL O PASSWORD INCORRECTO'});
+};
 module.exports=userCtrl

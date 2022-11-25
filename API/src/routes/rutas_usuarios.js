@@ -14,4 +14,5 @@ router.put('/:id',usersCtrl.updateArticulo);
 router.post('/',usersCtrl.crearArticulos)
 router.post('/:id/Puntos_De_Venta/:idV',usersCtrl.addVentasUser);
 router.post('/:id/articulos/:idA',usersCtrl.addArticulosUser);
+router.post('/LOGIN',usersCtrl.LOGIN)
 module.exports = router;
