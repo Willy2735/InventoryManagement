@@ -1,0 +1,15 @@
+#S2{
+    position: absolute;
+    top: 130px;
+    left: 25px;
+}
+#S1{
+    position: absolute;
+    top: 130px;
+    left: 300px;
+}
+#BOTON_ADD{
+    position: absolute;
+    top: 240px;
+    left: 650px;
+}

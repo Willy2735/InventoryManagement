@@ -1,0 +1,15 @@
+#articulos{
+    position: absolute;
+    top: 160px;
+    left: 400px;
+}
+#S2{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#BOTON_ADD{
+    position: absolute;
+    top: 110px;
+    left: 335px;
+}

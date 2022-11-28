@@ -10,6 +10,12 @@ import { HomepageComponent } from './componentes/homepage/homepage.component';
 import { VentasComponent } from './componentes/ventas/ventas.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegisterComponent } from './componentes/register/register.component';
+import { EditComponent } from './componentes/edit/edit.component';
+import { DeleteComponent } from './componentes/delete/delete.component';
+import { StoreSquareComponent } from './componentes/store-square/store-square.component';
+import { AddComponent } from './componentes/add/add.component';
+import { ItemSquareComponent } from './componentes/item-square/item-square.component';
+import { ItemFilterComponent } from './componentes/item-filter/item-filter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { RegisterComponent } from './componentes/register/register.component';
     HomepageComponent,
     VentasComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditComponent,
+    DeleteComponent,
+    StoreSquareComponent,
+    AddComponent,
+    ItemSquareComponent,
+    ItemFilterComponent
   ],
   imports: [
     BrowserModule,

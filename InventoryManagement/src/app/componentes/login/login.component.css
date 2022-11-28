@@ -250,3 +250,65 @@ opacity: 1;
     color: #FFFFFF;
     opacity: 1;
 }
+#FOOTER_REDES{
+    position: fixed;
+    top: 70%;
+    left: 65%;
+width: 319px;
+height: 101px;
+
+opacity: 1;
+}
+#SEGUIR{
+
+    top: 871px;
+left: 1204px;
+width: 319px;
+height: 27px;
+/* UI Properties */
+color: var(--unnamed-color-707070);
+text-align: left;
+font: normal normal normal 20px/27px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+opacity: 1;
+}
+#YT{
+    position: fixed;
+    top: 79%;
+    left: 66.5%;
+}
+#YOUTUBE{
+    top: 932px;
+left: 1223px;
+width: 57px;
+height: 40px;
+background: #0000008C 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+#IG{
+    position: fixed;
+    top: 79%;
+    left: 74%;
+}
+#INSTAGRAM{
+    top: 932px;
+    left: 1350px;
+    width: 40px;
+    height: 40px;
+    background: #0000008C 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+#FB{
+    position: fixed;
+    top: 79%;
+    left: 80%;
+}
+#FACEBOOK{
+    top: 932px;
+left: 1440px;
+width: 40px;
+height: 40px;
+background: #0000008C 0% 0% no-repeat padding-box;
+opacity: 1;
+}
