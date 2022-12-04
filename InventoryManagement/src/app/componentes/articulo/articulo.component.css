@@ -3,6 +3,7 @@
     position: absolute;
     top: 135px;
     left: 350px;
+    width: 75%;
 }
 #BOTON_ADD{
     position: relative;

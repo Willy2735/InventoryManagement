@@ -1,11 +1,10 @@
 
 <div class="row">
     <div class="col l12">
-        <app-item-square></app-item-square>
-        <app-item-square></app-item-square>
-        <app-item-square></app-item-square>
-        <app-item-square></app-item-square>
+        <app-item-square *ngFor="let articulo of articuloService.art" [articulo]="articulo"></app-item-square>
+        <div class="col l3" id="AGREGAR">
+            <app-add id="BTN"></app-add>
+        </div>
     </div>
   </div>
-
     
