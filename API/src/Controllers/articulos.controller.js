@@ -26,7 +26,7 @@ articulosCtrl.addVenta= async(req,res)=>{
     item.save();
     res.json(item)
 };
-ventasCtrl.removeVenta= async(req,res)=>{
+articulosCtrl.removeVenta= async(req,res)=>{
     const item=await articulos.findById(req.params.id)
     const art=item.puntos_ventas;
     art.forEach(element => {

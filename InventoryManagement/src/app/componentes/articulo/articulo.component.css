@@ -1,15 +1,11 @@
-#articulos{
-    position: absolute;
-    top: 160px;
-    left: 400px;
-}
+
 #S2{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 135px;
+    left: 350px;
 }
 #BOTON_ADD{
-    position: absolute;
+    position: relative;
     top: 110px;
     left: 335px;
 }

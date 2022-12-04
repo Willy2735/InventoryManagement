@@ -16,6 +16,8 @@ import { StoreSquareComponent } from './componentes/store-square/store-square.co
 import { AddComponent } from './componentes/add/add.component';
 import { ItemSquareComponent } from './componentes/item-square/item-square.component';
 import { ItemFilterComponent } from './componentes/item-filter/item-filter.component';
+import { ItemListComponent } from './componentes/item-list/item-list.component';
+import { StoreListComponent } from './componentes/store-list/store-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ItemFilterComponent } from './componentes/item-filter/item-filter.compo
     StoreSquareComponent,
     AddComponent,
     ItemSquareComponent,
-    ItemFilterComponent
+    ItemFilterComponent,
+    ItemListComponent,
+    StoreListComponent
   ],
   imports: [
     BrowserModule,

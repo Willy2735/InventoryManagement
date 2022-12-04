@@ -6,6 +6,7 @@ const userSchema=new Schema({
         
         PASSWORD:{type:String, required:true},
         EMAIL:{type:String,required:true},
+        img_path:{type:String,required:false,default:"../../../assets/imagenes/user.png"},
         puntos_ventas:[{
             type:mongoose.Schema.Types.ObjectId,
             required:false,

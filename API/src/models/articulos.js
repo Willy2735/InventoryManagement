@@ -8,6 +8,7 @@ const articuloSchema=new Schema({
         Tipo_Articulo:{type:String,required:true},
         Descripcion:{type:String,required:false},
         Cantidad:{type:Number,required:false,default:0},
+        img_path:{type:String,required:false,default:"../../../assets/imagenes/ITEM.png"},
         puntos_ventas:[{
             type:mongoose.Schema.Types.ObjectId,
             required:false,
