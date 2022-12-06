@@ -3,7 +3,10 @@
     <div class="col l12">
         <app-item-square *ngFor="let articulo of articuloService.art" [articulo]="articulo"></app-item-square>
         <div class="col l3" id="AGREGAR">
-            <app-add id="BTN"></app-add>
+            <a (click)="paginaArt()">
+                <app-add id="BTN"></app-add>
+            </a>
+            
         </div>
     </div>
   </div>

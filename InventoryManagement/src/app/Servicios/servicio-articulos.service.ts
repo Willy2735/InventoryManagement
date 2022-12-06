@@ -13,4 +13,19 @@ export class ServicioArticulosService {
   getArticulos(){
     return this.http.get<articulos[]>(this.API_URL);
   }
+  getArticuloID(ID:string){
+    var URL='http://localhost:3000/api/articulos/'+ID
+    return this.http.get<articulos>(URL);
+  }
+  getArticulosUser(ID:string){
+      
+    var URL='http://localhost:3000/api/usuario/'+ID+'/articulos'
+    return this.http.get<[]>(URL);
+  }
+  
+  deleteArticulo(IDU:string,ID:string){
+    
+    var URL='http://localhost:3000/api/uuario/'+IDU+'/articulos/'+ID;  
+    return this.http.delete<[]>(URL);
+  }
 }

@@ -4,7 +4,9 @@
     <div class="col l12">
         <app-store-square *ngFor="let venta of ventasService.VENTAS" [venta]="venta"></app-store-square>
         <div class="col l2" id="AGREGAR">
+            <a (click)="paginaVen()">
             <app-add id="BTN"></app-add>
+        </a>
         </div>
     </div>
   </div>

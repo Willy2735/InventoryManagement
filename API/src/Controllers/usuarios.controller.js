@@ -74,20 +74,21 @@ userCtrl.updateArticulo= async(req,res)=>{
 };
 userCtrl.deleteArticuloUser= async(req,res)=>{
     const item=await users.findById(req.params.id)
-    const art=item.articulos;
-    
+    var art=item.articulos;
+    const idaAA=req.params.idA
     art.forEach(element => {
         
-        if(element.id==req.idA){
+        if(element==idaAA){
             art.splice(art.indexOf(element),1)
            
         articulos.findByIdAndDelete(element.id)
         }
         
     });
+    item.articulos=art;
+    item.save();
+    res.send({message:'Articulo eliminado',idaAA});
     
-    
-    res.send({message:'Articulo eliminado'});
 };
 userCtrl.deleteVentaUser= async(req,res)=>{
     const item=await users.findById(req.params.id)

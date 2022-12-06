@@ -38,4 +38,10 @@ export class StoreListComponent implements OnInit {
     this.ventasService.VENTAS=this.ar;
   }
 
+  paginaVen(){
+    
+    this.ID=this.route.snapshot.paramMap.get('Uid')
+    
+    this.router.navigate(['user/'+this.ID+'/Ventas/Add']);
+  }
 }

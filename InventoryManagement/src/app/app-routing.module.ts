@@ -18,6 +18,8 @@ const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'Register', component:RegisterComponent},
   {path:'user/:Uid/Ventas', component:VentasComponent},
+  
+  {path:'user/:Uid/Ventas/Add', component:AddStoreComponent},
   {path:'Ventas', component:VentasComponent},
   
   {path:'Ventas/Add', component:AddStoreComponent},
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path:'Articulos', component:ArticuloComponent},
   
   {path:'user/:Uid/Articulos', component:ArticuloComponent},
+  
+  {path:'user/:Uid/Articulos/Add', component:AddItemComponent},
   {path:'Articulos/Add', component:AddItemComponent},
   
   {path:'Articulos/Edit', component:EditItemComponent}

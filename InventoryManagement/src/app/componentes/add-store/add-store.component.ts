@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import {ServicioArticulosService} from '../../Servicios/servicio-articulos.service';
 
@@ -9,8 +10,8 @@ import {ServicioArticulosService} from '../../Servicios/servicio-articulos.servi
 })
 export class AddStoreComponent implements OnInit {
 
-  constructor(public articuloService: ServicioArticulosService) { }
-
+  constructor(public articuloService: ServicioArticulosService,private router:Router,private route:ActivatedRoute) { }
+  ID:any;
   ngOnInit(): void {
   this.getArticulos();
   }
@@ -22,5 +23,12 @@ export class AddStoreComponent implements OnInit {
         console.log(this.articuloService.art);
       }
     );
+  }
+  
+  CANCEL(){
+    
+    this.ID=this.route.snapshot.paramMap.get('Uid')
+    
+    this.router.navigate(['user/'+this.ID+'/Ventas']);
   }
 }
