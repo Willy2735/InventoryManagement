@@ -1,0 +1,30 @@
+
+
+<p id="TITULO">Editar Articulo:</p>
+<p class="TXT_LABEL" id="NM">Nombre:</p>
+<input type="text" id="NOMBRE_ART">
+<p class="TXT_LABEL" id="DESC">Descripcion:</p>
+<input type="text" id="DESC_ART">
+<p class="TXT_LABEL" id="PR" >Precio:</p>
+
+<input type="text" id="PRECIO_ART">
+
+<p class="TXT_LABEL" id="CT" >Cantidad:</p>
+
+<input type="text" id="Cantidad_ART">
+<p class="TXT_LABEL" id="PV">Puntos de venta:</p>
+<div id="PVS">
+    
+    
+<div *ngFor="let venta of ventasService.VENTAS" id="CB">
+    <input class="CBS" type="checkbox" value="{{venta.id}}"/> {{venta.nombre}}
+ </div>
+</div>
+    
+<button id="BTN_ADD">Agregar Articulo</button>
+<button id="BTN_CANCEL">Cancelar</button>
+<p class="TXT_LABEL" id="IM">Imagen</p>
+<img src="../../../assets/imagenes/ITEM.png" id="IMG">
+
+<button id="BTN_IMG">Subir Imagen</button>
+<app-header></app-header>

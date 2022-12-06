@@ -1,15 +1,24 @@
 #S2{
     position: absolute;
     top: 130px;
-    left: 25px;
+    left: 12%;
+    width: 75%;
 }
-#S1{
-    position: absolute;
-    top: 130px;
-    left: 300px;
-}
+
 #BOTON_ADD{
     position: absolute;
     top: 240px;
     left: 650px;
+}
+#LOGO{
+    position: fixed;
+    top: 5px;
+left: 15px;
+width: 179px;
+height: 179px;
+/* UI Properties */
+background: transparent 0% 0% no-repeat padding-box;
+border: 5px solid #CB73C3;
+border-radius: 50%;
+opacity: 1;
 }

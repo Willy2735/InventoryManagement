@@ -1,9 +1,31 @@
 import { Injectable } from '@angular/core';
 
+import {HttpClient} from '@angular/common/http';
+
+import{user}from '../Models/user';
+
+import{userC}from '../Models/userC';
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-
-  constructor() { }
+  API_URL="http://localhost:3000/api/usuario";
+  
+  USUARIOS:user []|undefined;
+  constructor(private http:HttpClient) { }
+  getUsers(){
+    return this.http.get<user[]>(this.API_URL);
+  }
+  getLogin(email:String,pass:String){
+    var URL="http://localhost:3000/api/usuario/LOGIN";
+    return this.http.post(URL,{
+      "EMAIL":email,
+      "PASSWORD":pass
+    })
+  }
+  REGISTER(US:userC){
+    var URL="http://localhost:3000/api/usuario";
+    
+    return this.http.post(URL,US)
+  }
 }

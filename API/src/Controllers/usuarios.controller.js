@@ -9,7 +9,7 @@ userCtrl.getArticulos= async(req,res)=>{
 userCtrl.crearArticulos= async(req,res)=>{
     const nuevoArticulo=new users(req.body);
     await nuevoArticulo.save()
-    res.send({message:'Usuario creado'});
+    res.send({message:'Usuario creado',ID:nuevoArticulo.id});
 };
 userCtrl.getArticulo= async(req,res)=>{
     const item=await users.findById(req.params.id)
@@ -105,12 +105,19 @@ userCtrl.deleteVentaUser= async(req,res)=>{
 userCtrl.LOGIN= async(req,res)=>{
     const user= new users(req.body);
     const US= await users.find();
+    var e="ps";
     US.forEach(element => {
       if(element.EMAIL==user.EMAIL&&element.PASSWORD==user.PASSWORD){
-        res.send({message:'LOGIN EXITOSO'});
-        return;
+        e = element
       }  
     });
+    if(e=="ps"){
+        
     res.send({message:'EMAIL O PASSWORD INCORRECTO'});
+    }else{
+        
+    res.send({message:'LOGIN EXITOSO',e});
+    }
+    
 };
 module.exports=userCtrl

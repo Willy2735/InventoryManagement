@@ -1,20 +1,10 @@
 
 <div class="row">
-    <div class="col l12 ">
-        <app-store-square></app-store-square>
-        <app-store-square></app-store-square>
-        <app-store-square></app-store-square>
-        <app-store-square></app-store-square>
-        
-        <app-store-square></app-store-square>
-        
-        <app-store-square></app-store-square>
-        
-        <app-store-square></app-store-square>
-        
-        <app-store-square></app-store-square>
-
-        
-        <app-store-square></app-store-square>
+    
+    <div class="col l12">
+        <app-store-square *ngFor="let venta of ventasService.VENTAS" [venta]="venta"></app-store-square>
+        <div class="col l2" id="AGREGAR">
+            <app-add id="BTN"></app-add>
+        </div>
     </div>
   </div>

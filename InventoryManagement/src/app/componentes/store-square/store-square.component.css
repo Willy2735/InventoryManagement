@@ -1,3 +1,16 @@
+#TARJETATION{
+    padding: 10px;
+}
+#BD{
+    position: relative;
+    top: -30px;
+    left:40%;
+}
+#BE{
+    position: relative;
+    top: -30px;
+    left:15%;
+}
 #CONT{
 width: 250px;
 height: 317px;

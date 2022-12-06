@@ -1,3 +1,78 @@
+#CLICK{
+    
+    position: absolute;
+    top: 92%;
+left: 75%;
+width: 180px;
+height: 27px;
+/* UI Properties */
+text-align: left;
+text-decoration: underline;
+font: normal normal normal 16px Segoe UI;
+letter-spacing: 0px;
+color: #2C82E5;
+opacity: 1;
+}
+#INFO{
+
+    position: absolute;
+    top: 92%;
+left: 56%;
+width: 180px;
+height: 27px;
+/* UI Properties */
+color: var(--unnamed-color-707070);
+text-align: left;
+font: normal normal normal 16px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+opacity: 1;
+}
+#PRIV{
+
+    position: absolute;
+    top: 92%;
+left: 50%;
+width: 180px;
+height: 27px;
+/* UI Properties */
+color: var(--unnamed-color-707070);
+text-align: left;
+font: normal normal normal 16px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+opacity: 1;
+}
+#SOP{
+
+    position: absolute;
+    top: 92%;
+left: 65%;
+width: 180px;
+height: 27px;
+/* UI Properties */
+color: var(--unnamed-color-707070);
+text-align: left;
+font: normal normal normal 16px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+opacity: 1;
+}
+#COMP{
+
+    position: absolute;
+    top: 92%;
+left: 83%;
+width: 190px;
+height: 27px;
+/* UI Properties */
+color: var(--unnamed-color-707070);
+text-align: left;
+font: normal normal normal 16px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+opacity: 1;
+}
 #LOGIN{
     top: 0px;
 left: 0px;
@@ -10,44 +85,48 @@ opacity: 1;
 }
 
 #IMAGEN{
-top: 0px;
-left: 0px;
-width: 792px;
-height: 715px;
-position: fixed;
-background: transparent linear-gradient(180deg, #00000000 0%, #00000091 100%) 0% 0% no-repeat padding-box;
-opacity: 1;
-}
-#FRASE_IMAGEN{
-    position: absolute;
-    top: -25px;
-left: 121px;
-width: 647px;
-height: 139px;
-text-align: right;
-font: normal normal bold 50px/67px Segoe UI;
-letter-spacing: 0px;
-color: #FEFEFE;
-text-shadow: 0px 3px 6px #00000029;
-opacity: 1;
-}
-#FRASE_IMAGEN_ABAJO{
-    position: absolute;
-    top: 500px;
-left: 51px;
-width: 647px;
-height: 83px;
-text-align: center;
-font: italic normal bold 50px/67px Segoe UI;
-letter-spacing: 0px;
-color: #FEFEFE;
-
-opacity: 1;
-text-shadow: 0 0 15px #000000, 0 0 15px #000000;
-}
+    top: 0px;
+    left: 0px;
+    width: 652px;
+    height: 715px;
+    position: fixed;
+    background: transparent linear-gradient(180deg, #00000000 0%, #00000091 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    }
+    #FRASE_IMAGEN{
+        position: absolute;
+        top: -25px;
+    left: -40px;
+    padding: 50px;
+    width: 647px;
+    height: 139px;
+    text-align: right;
+    font: normal normal bold 40px/57px Segoe UI;
+    letter-spacing: 0px;
+    color: #FEFEFE;
+    text-shadow: 0px 3px 6px #00000029;
+    
+    text-shadow: 0 0 15px #000000, 0 0 15px #000000;
+    opacity: 1;
+    }
+    #FRASE_IMAGEN_ABAJO{
+        position: absolute;
+        top: 500px;
+    left: 0px;
+    width: 647px;
+    height: 83px;
+    text-align: center;
+    font: italic normal bold 40px/57px Segoe UI;
+    letter-spacing: 0px;
+    color: #FEFEFE;
+    
+    opacity: 1;
+    text-shadow: 0 0 15px #000000, 0 0 15px #000000;
+    }
 #RECTANGULO{
-top: 97px;
-left: 910px;
+    
+top: 57px;
+left: 840px;
 width: 500px;
 height: 475px;
 position: fixed;
@@ -121,7 +200,7 @@ width: 180px;
     color: var(--unnamed-color-909090);
     text-align: left;
     font: normal normal bold 30px/40px Segoe UI;
-    letter-spacing: 9px;
+    letter-spacing: 5px;
     color: #909090;
     opacity: 1;
 }
@@ -198,8 +277,8 @@ opacity: 1;
 
 #BTN_SESSION{
     position: relative;
-    top: -5%;
-    left: 33%;
+    top: -40%;
+    left: -30%;
 width: 204px;
 height: 74px;
 

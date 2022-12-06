@@ -1,13 +1,46 @@
-
+<div class="row">
     <div id="HEADER">
+
+        <div id="BTNS">
+            
         <p id="EMPRESA">Mi Empresa</p>
-        <div class="BARRA" id="BARRA1"></div>
-        <p id="VENTA">Puntos de venta</p>
-        <div class="BARRA" id="BARRA2"></div>
-        <p id="Articulos">Articulos</p>
-        <div class="BARRA" id="BARRA3"></div>
-        <p id="REPORTES">Reportes</p>
-        <div id="SESSION">
-            <p id="close">Sign Out</p>
+        <div  id="BARRA1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1" height="53" viewBox="0 0 1 53">
+                <line id="Línea_PUNTOS_DE_VENTA" data-name="Línea PUNTOS DE VENTA" y2="53" transform="translate(0.5)" fill="none" stroke="#909090" stroke-width="1"/>
+              </svg>
         </div>
+        
+        <a (click)="paginaVen()">
+        <div>
+                
+        <p id="VENTA">Puntos de venta</p>
+        
+        </div>
+        </a>
+        <div id="BARRA2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1" height="53" viewBox="0 0 1 53">
+                <line id="Línea_PUNTOS_DE_VENTA" data-name="Línea PUNTOS DE VENTA" y2="53" transform="translate(0.5)" fill="none" stroke="#909090" stroke-width="1"/>
+              </svg>
+        </div>
+        <a (click)="paginaArt()">
+        <div>
+        <p id="Articulos">Articulos</p>
     </div>
+    </a>
+        <div id="BARRA3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1" height="53" viewBox="0 0 1 53">
+                <line id="Línea_PUNTOS_DE_VENTA" data-name="Línea PUNTOS DE VENTA" y2="53" transform="translate(0.5)" fill="none" stroke="#909090" stroke-width="1"/>
+              </svg>
+        </div>
+        <p id="REPORTES">Reportes</p>
+        
+          
+        </div>
+        <a routerLink="">
+    <div id="SESSION">
+        <p id="close">Sign Out</p>
+    </div>
+</a>
+</div>
+</div>
+    

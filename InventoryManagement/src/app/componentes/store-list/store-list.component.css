@@ -1,0 +1,12 @@
+#AGREGAR{
+    
+    width: 250px;
+    height: 317px;
+    /* UI Properties */
+    opacity: 1;
+    }
+    #BTN{
+        position: relative;
+        top: 45%;
+        left: 50%;
+    }

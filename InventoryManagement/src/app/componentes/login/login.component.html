@@ -15,20 +15,25 @@ La neta ninguno.
         <div id="BOTON_LOGIN_REGISTER">
             <p id="BTN_LOGIN">Log In</p>
             <div id="LINEA"></div>
-            <p id="BTN_Register">Register</p>
+            <a routerLink="/Register">
+            <p id="BTN_Register">Register</p></a>
         </div>
-        <div id="INFO_USUARIO">
-            <p id="LABEL_CORREO">Correo:</p>
-            <input type="text" id="correo" name="correo" required size="10">
-            <p id="LABEL_PWD">Contraseña:</p>
-            <input type="text" id="PWD" name="password" required size="10">
-        </div>
-        <div id="BTN_FORGOT">
-            <p id="LABEL_PWDF">Olvide mi Contraseña<p>
-        </div>
-        <div id="BTN_SESSION">
-            <p id="LABEL_LOG">Iniciar Sesión<p>
-        </div>
+        <form #loginform="ngForm" (ngSubmit)="login_p(loginform)">
+            <div id="INFO_USUARIO">
+                <p id="LABEL_CORREO">Correo:</p>
+                <input type="text" id="correo" name="correo" required size="10" [(ngModel)]="mail">
+                <p id="LABEL_PWD">Contraseña:</p>
+                
+                <input type="text" id="PWD" name="PWD" required size="10"[(ngModel)]="pass">
+                
+            </div>
+            <div id="BTN_FORGOT">
+                <p id="LABEL_PWDF">Olvide mi Contraseña<p>
+            </div>
+            <input type="Submit" id="BTN_SESSION" value="Iniciar Sesion">
+            
+        </form>
+        
     </div>
     <div id="FOOTER_REDES">
         <p id="SEGUIR">Síguenos en nuestras redes sociales:</p>
@@ -49,6 +54,14 @@ La neta ninguno.
         </div>
           
     </div>
+
+    <p id="PRIV">Privacidad</p>
+        <p id="INFO">Mas Informacion</p>
+        
+        
+        <p id="SOP">¿Necesitas Soporte?</p>
+        <p id="CLICK">Haz Click Aqui</p>
+        <p id="COMP">© 2022 AMOGUS Inc</p>
 </div>
         
 

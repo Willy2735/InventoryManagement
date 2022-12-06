@@ -3,7 +3,7 @@
     position: fixed;
     top: 0px;
 left: 0px;
-width: 326px;
+width: 226px;
 height: 1080px;
 /* UI Properties */
 border: 1px solid var(--unnamed-color-707070);
@@ -15,20 +15,20 @@ opacity: 1;
 #filtro_venta{
     position: inherit;
     top: 205px;
-    left: 38px;
-    width: 326px;
+    left: 28px;
+    width: 306px;
     height: 33px;
     /* UI Properties */
     color: var(--unnamed-color-ffffff);
     text-align: left;
-    font: normal normal bold 25px/33px Segoe UI;
+    font: normal normal bold 20px/28px Segoe UI;
     letter-spacing: 1.25px;
     color: #FFFFFF;
     opacity: 0.8;
 }
 .campo{
     position: inherit;
-width: 250px;
+width: 180px;
 height: 43px;
 /* UI Properties */
 border: 1px solid var(--unnamed-color-707070);
@@ -41,42 +41,42 @@ opacity: 1;
 
 #VENTAS{
     top: 274px;
-left: 38px;
+left: 28px;
 }
 #ITEMS{
 
     top: 374px;
-left: 38px;
+left: 28px;
 }
 #NOMBRES{
 
     top: 474px;
-left: 38px;
+left: 28px;
 }
 #filtro_tipo{
     position: inherit;
     top: 405px;
-left: 38px;
+left: 28px;
 width: 326px;
 height: 33px;
 /* UI Properties */
 color: var(--unnamed-color-ffffff);
 text-align: left;
-font: normal normal bold 25px/33px Segoe UI;
+font: normal normal bold 20px/28px Segoe UI;
 letter-spacing: 1.25px;
 color: #FFFFFF;
 opacity: 0.8;
 }
 #filtro_precio{
     position: inherit;
-    top: 502px;
-left: 38px;
+    top: 507px;
+left: 28px;
 width: 79px;
 height: 33px;
 /* UI Properties */
 color: var(--unnamed-color-ffffff);
 text-align: left;
-font: normal normal bold 25px/33px Segoe UI;
+font: normal normal bold 20px/28px Segoe UI;
 letter-spacing: 1.25px;
 color: #FFFFFF;
 opacity: 0.8;
@@ -84,13 +84,13 @@ opacity: 0.8;
 #filtro_nombre{
     position: inherit;
     top: 306px;
-left: 38px;
+left: 28px;
 width: 103px;
 height: 33px;
 /* UI Properties */
 color: var(--unnamed-color-ffffff);
 text-align: left;
-font: normal normal bold 25px/33px Segoe UI;
+font: normal normal bold 20px/28px Segoe UI;
 letter-spacing: 1.25px;
 color: #FFFFFF;
 opacity: 0.8;
@@ -99,9 +99,9 @@ opacity: 0.8;
     position: inherit;
     padding: 13px;
 top: 572px;
-left: 38px;
-width: 80px;
-height: 23px;
+left: 28px;
+width: 40px;
+height: 17px;
 /* UI Properties */
 border: 1px solid var(--unnamed-color-707070);
 background: #F0F0F0 0% 0% no-repeat padding-box;
@@ -115,9 +115,9 @@ opacity: 1;
     position: inherit;
     padding: 13px;
 top: 572px;
-left: 178px;
-width: 80px;
-height: 23px;
+left: 138px;
+width: 40px;
+height: 17px;
 /* UI Properties */
 border: 1px solid var(--unnamed-color-707070);
 background: #F0F0F0 0% 0% no-repeat padding-box;
@@ -130,7 +130,7 @@ opacity: 1;
 #MIN{
     position: inherit;
     top: 620px;
-left: 76px;
+left: 46px;
 width: 27px;
 height: 20px;
 /* UI Properties */
@@ -144,7 +144,7 @@ opacity: 0.8;
 #MAX{
     position: inherit;
     top: 620px;
-left: 221px;
+left: 156px;
 width: 29px;
 height: 20px;
 color: var(--unnamed-color-ffffff);
@@ -156,14 +156,14 @@ opacity: 0.8;
 }
 #TXT_FILTRO{
     position: inherit;
-    top: 164px;
-left: 107px;
+    top: 169px;
+left: 65px;
 width: 123px;
 height: 33px;
 /* UI Properties */
 color: var(--unnamed-color-ffffff);
 text-align: left;
-font: normal normal normal 25px/33px Segoe UI;
+font: normal normal normal 20px/28px Segoe UI;
 letter-spacing: 1.25px;
 color: #FFFFFF;
 opacity: 0.8;
@@ -171,7 +171,7 @@ opacity: 0.8;
 #LOGO{
     position: inherit;
     top: 5px;
-left: 75px;
+left: 25px;
 width: 179px;
 height: 179px;
 /* UI Properties */

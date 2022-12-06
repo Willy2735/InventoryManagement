@@ -12,24 +12,35 @@ La neta ninguno.
     <div id="RECTANGULO">
         <p id="INVENTORY">INVENTORY MANAGEMENT</p>
         <div id="BOTON_LOGIN_REGISTER">
-            <p id="BTN_LOGIN">Log In</p>
+            
+            <a routerLink="">
+            <p id="BTN_LOGIN">Log In</p></a>
             <div id="LINEA"></div>
             <p id="BTN_Register">Register</p>
         </div>
-        <div id="INFO_USUARIO">
-            <p id="LABEL_CORREO">Correo:</p>
-            <input type="text" id="correo" name="correo" required size="10">
-            <p id="LABEL_PWD">Contraseña:</p>
-            <input type="text" id="PWD" name="password" required size="10">
-            <pre id="LABEL_PWDC">Confirmar 
+            <form id="INFO_USUARIO" #regform="ngForm" (ngSubmit)="register(regform)">
+                <p id="LABEL_CORREO">Correo:</p>
+                <input type="text" id="correo" name="correo" required size="0"[(ngModel)]="mail">
+                <p id="LABEL_PWD">Contraseña:</p>
+                <input type="text" id="PWD" name="password" required size="0"[(ngModel)]="pass">
+                <pre id="LABEL_PWDC">Confirmar 
 Contraseña:</pre>
-            <input type="text" id="PWDC" name="passwordC" required size="10">
-        </div>
+                <input type="text" id="PWDC" name="passwordC" required size="0"[(ngModel)]="cpass">
+                       
+                    <input type="Submit" id="BTN_SESSION" value="Registrarme">
+            
+            </form>
         
-        <div id="BTN_SESSION">
-            <p id="LABEL_LOG">Registrarme<p>
-        </div>
+        
     </div> 
+    
+    <p id="PRIV">Privacidad</p>
+        <p id="INFO">Mas Informacion</p>
+        
+        
+        <p id="SOP">¿Necesitas Soporte?</p>
+        <p id="CLICK">Haz Click Aqui</p>
+        <p id="COMP">© 2022 AMOGUS Inc</p>
 </div>
         
 
