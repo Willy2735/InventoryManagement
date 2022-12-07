@@ -32,4 +32,10 @@ export class HeaderComponent implements OnInit {
     
     this.router.navigate(['user/'+this.ID+'/Articulos']);
   }
+  paginaAbout(){
+    
+    this.ID=this.route.snapshot.paramMap.get('Uid')
+    
+    this.router.navigate(['user/'+this.ID+'/About']);
+  }
 }//te

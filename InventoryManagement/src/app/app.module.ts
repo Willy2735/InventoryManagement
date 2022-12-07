@@ -23,6 +23,7 @@ import { AddItemComponent } from './componentes/add-item/add-item.component';
 import { AddStoreComponent } from './componentes/add-store/add-store.component';
 import { EditItemComponent } from './componentes/edit-item/edit-item.component';
 import { EditStoreComponent } from './componentes/edit-store/edit-store.component';
+import { AboutUsComponent } from './componentes/about-us/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { EditStoreComponent } from './componentes/edit-store/edit-store.componen
     AddStoreComponent,
     EditItemComponent,
     EditStoreComponent,
+    AboutUsComponent,
     
   ],
   imports: [

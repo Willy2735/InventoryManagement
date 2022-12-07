@@ -1,0 +1,61 @@
+#TE{
+    position: absolute;
+    top: 10%;
+    left: 38%;
+}
+#Parrafo{
+    
+    position: absolute;
+    top: 25%;
+    left: 24%;
+    width: 52%;
+    
+font: normal normal normal 20px Segoe UI;
+  text-align: justify;
+}
+#TE2{
+    position: absolute;
+    top: 50%;
+    left: 23%;
+}
+
+#TE3{
+    position: absolute;
+    top: 116%;
+    left: 38%;
+}
+ul{
+
+    list-style-type: disc;
+}
+ul:not(.browser-default)>li{
+    
+    list-style-type: disc;
+}
+#LISTA{
+    list-style-type: disc;
+    padding-left: 50px;
+    position: absolute;
+    top: 66%;
+    left: 22%;
+    width: 52%;
+    opacity: 1;
+font: normal normal normal 20px Segoe UI;
+  text-align: justify;
+}
+
+#LISTA2{
+    list-style-type: disc;
+    padding-left: 50px;
+    position: absolute;
+    top: 133%;
+    left: 22%;
+    width: 52%;
+    opacity: 1;
+font: normal normal normal 20px Segoe UI;
+  text-align: justify;
+}
+#FR{
+    height: 400px;
+    width: 500px;
+}

@@ -13,10 +13,12 @@ import { ArticuloComponent} from './componentes/articulo/articulo.component';
 
 import { AddItemComponent} from './componentes/add-item/add-item.component';
 
+import { AboutUsComponent} from './componentes/about-us/about-us.component'
 import { EditItemComponent} from './componentes/edit-item/edit-item.component';
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'Register', component:RegisterComponent},
+  {path:'user/:Uid/About', component:AboutUsComponent},
   {path:'user/:Uid', component:HomepageComponent},
   {path:'user/:Uid/Ventas', component:VentasComponent},
   
