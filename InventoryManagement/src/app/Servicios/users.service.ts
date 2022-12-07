@@ -16,6 +16,12 @@ export class UsersService {
   getUsers(){
     return this.http.get<user[]>(this.API_URL);
   }
+  getUSERID(ID:any){
+    
+    var URL="http://localhost:3000/api/usuario/"+ID;
+    return this.http.get<user>(URL);
+
+  }
   getLogin(email:String,pass:String){
     var URL="http://localhost:3000/api/usuario/LOGIN";
     return this.http.post(URL,{
@@ -27,5 +33,14 @@ export class UsersService {
     var URL="http://localhost:3000/api/usuario";
     
     return this.http.post(URL,US)
+  }
+  updateUSER(ID:String,EMAIL:String,PASSWORD:String){
+    
+    var URL="http://localhost:3000/api/usuario/"+ID;
+    
+    return this.http.put(URL,{
+      "EMAIL":EMAIL,
+      "PASSWORD":PASSWORD
+    })
   }
 }

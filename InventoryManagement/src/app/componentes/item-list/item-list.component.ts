@@ -22,22 +22,12 @@ export class ItemListComponent implements OnInit {
     this.ID=this.route.snapshot.paramMap.get('Uid')
     this.articuloService.getArticulosUser(this.ID).subscribe(
       res=>{
-        var array=res
         
-        array.forEach(element => {
-          console.log(element);
-
-          this.articuloService.getArticuloID(element).subscribe(
-            res =>{
-              
-          this.ar.push(res);
-            }
-          );
-        });
+    this.articuloService.art=res
+        
        
       }
     );
-    this.articuloService.art=this.ar;
   }
   paginaArt(){
     

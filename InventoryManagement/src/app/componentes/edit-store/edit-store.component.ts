@@ -63,28 +63,14 @@ export class EditStoreComponent implements OnInit {
     
   }
   getArticulos(){
-      
+
     this.ID=this.route.snapshot.paramMap.get('Uid')
     this.articuloService.getArticulosUser(this.ID).subscribe(
       res=>{
-        var array=res
-        
-        array.forEach(element => {
-         
-
-          this.articuloService.getArticuloID(element).subscribe(
-            res =>{
-                    
-          this.ar.push(res);
-              
-    
-        }
-          );
-        });
-       
+      
+    this.articuloService.art=res; 
       }
     );
-    this.articuloService.art=this.ar;
   }
   
 ACTUALIZAR(form:NgForm){
@@ -101,10 +87,11 @@ ACTUALIZAR(form:NgForm){
         }
     }
 }
+
+console.log(this.ar);
 this.ventasService.updateVenta(this.IDv,this.NAME,this.DESCRIPCION,this.ar).subscribe(
   res=>{
     
-    console.log(res);
   }
 )
 
@@ -117,6 +104,6 @@ CANCEL(){
     
   this.ID=this.route.snapshot.paramMap.get('Uid')
     
-  this.router.navigate(['user/'+this.ID+'/Articulos']);
+  this.router.navigate(['user/'+this.ID+'/Ventas']);
 }
 }

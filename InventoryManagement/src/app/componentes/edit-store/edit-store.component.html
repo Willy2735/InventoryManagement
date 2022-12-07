@@ -1,7 +1,7 @@
 
 
 <form #EDITSFORM="ngForm" (ngSubmit)="ACTUALIZAR(EDITSFORM)" >
-<p id="TITULO">Nuevo Punto de Venta:</p>
+<p id="TITULO">Editar Punto de Venta:</p>
 <p class="TXT_LABEL" id="NM">Nombre:</p>
 <input type="text" id="NOMBRE_ART" name="NAME" [(ngModel)]="NAME">
 <p class="TXT_LABEL" id="DESC">Descripcion:</p>
@@ -12,11 +12,11 @@
     
     <input type="hidden" name="ARREGLO"[(ngModel)]="ar">
 <div *ngFor="let articulo of articuloService.art" id="CB">
-    <input class="CBS" type="checkbox" [id]="IDv(articulo)" name="CHEE" [checked]="CHECKS(ar,articulo)"/> {{articulo.nombre}}
+    <input class="CBS" type="checkbox" [id]="IDV(articulo)" name="CHEE" [checked]="CHECKS(ar,articulo)"/> {{articulo.nombre}}
  </div>
 </div>
     
-<button id="BTN_ADD" type="submit()">Agregar Punto de Venta</button>
+<button id="BTN_ADD" type="submit()">Editar Punto de Venta</button>
 <button id="BTN_CANCEL" (click)="CANCEL()">Cancelar</button>
 <p class="TXT_LABEL" id="IM">Imagen</p>
 <img src={{IMAG}} id="IMG">

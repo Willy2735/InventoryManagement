@@ -34,22 +34,10 @@ export class AddItemComponent implements OnInit {
     this.ID=this.route.snapshot.paramMap.get('Uid')
     this.ventasService.getVentasUser(this.ID).subscribe(
       res=>{
-        var array=res
         
-        array.forEach(element => {
-          console.log(element);
-          this.ventasService.getVentasID(element).subscribe(
-            res =>{
-              
-          this.ar.push(res);
-            }
-          );
-        });
-        
+    this.ventasService.VENTAS=res;  
       }
     );
-    console.log(this.ar)
-    this.ventasService.VENTAS=this.ar;
   
 }
 ADD(form:NgForm){

@@ -29,7 +29,7 @@ ventasCtrl.getArticulos_V= async(req,res)=>{
     res.json(item1)
 };
 ventasCtrl.addArticulo= async(req,res)=>{
-    const item=await articulos.findById(req.params.id)
+    const item=await puntos_ventas.findById(req.params.id)
     const item1=await articulos.findById(req.params.idA)
     item.articulos.push(item1)
     item.save();

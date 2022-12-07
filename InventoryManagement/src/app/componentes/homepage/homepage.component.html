@@ -1,2 +1,14 @@
 
+        <p id="TITLO">Cambia tu email o Contraseña</p>
+<form #EDITUSER="ngForm" (ngSubmit)="ACTUALIZAR(EDITUSER)" >
+
+    
+<p class="TXT_LABEL" id="NM">EMAIL:</p>
+<input type="text" id="NOMBRE_ART" name="EMAIL" [(ngModel)]="EMAIL">
+<p class="TXT_LABEL" id="DESC">Descripcion:</p>
+<input type="text" id="DESC_ART" name="PASSWORD" [(ngModel)]="PASSWORD">
+
+<button id="BTN_ADD" type="submit()">Actualizar datos</button>
+</form>
+<img src={{IMG}} id="LOGO">
 <app-header></app-header>

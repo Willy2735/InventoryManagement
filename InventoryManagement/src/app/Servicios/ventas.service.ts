@@ -35,14 +35,18 @@ export class VentasService {
     var URL='http://localhost:3000/api/usuario/'+IDU+'/Puntos_De_Venta/'+ID;  
     return this.http.delete<[]>(URL);
   }
-  
+  addArticuloVenta(IDV:string,IDA:string){
+    
+    var URL='http://localhost:3000/api/puntos_ventas/'+IDV+'/articulos/'+IDA;  
+    return this.http.delete<[]>(URL);
+  }
   updateVenta(ID:string,NAME:String,DESCRIPCION:String,VENT:any[]){
     
     var URL='http://localhost:3000/api/puntos_ventas/'+ID
     return this.http.put<ventas>(URL,{
       "nombre":NAME,
       "Descripcion":DESCRIPCION,
-      "puntos_ventas": VENT
+      "articulos": VENT
     });
   }
   newVenta(NAME:String,DESCRIPCION:String,VENT:any[]){

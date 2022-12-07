@@ -39,7 +39,6 @@ export class EditItemComponent implements OnInit {
   
     for(var element of this.ar){
     
-      
       if(element==ID._id){
         return true;
           }
@@ -75,21 +74,10 @@ export class EditItemComponent implements OnInit {
     this.IDU=this.route.snapshot.paramMap.get('Uid')
     this.ventasService.getVentasUser(this.IDU).subscribe(
       res=>{
-        var array=res
         
-        array.forEach(element => {
-          console.log(element);
-          this.ventasService.getVentasID(element).subscribe(
-            res =>{
-              
-          this.ar.push(res);
-            }
-          );
-        });
-        
+   this.ventasService.VENTAS=res;  
        }
     );
-   this.ventasService.VENTAS=this.ar;
 
 }
 ACTUALIZAR(form:NgForm){
