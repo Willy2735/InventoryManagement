@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
         if(this.LOG_MG.message=="LOGIN EXITOSO"){
           
     this.router.navigate(['user/'+this.LOG_MG.e._id]);
+        }else{
+          alert("Email o password incorrecto");
         }
       } 
     );
