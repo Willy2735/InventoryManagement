@@ -1,61 +1,103 @@
-#TE{
-    position: absolute;
-    top: 10%;
-    left: 38%;
-}
-#Parrafo{
-    
-    position: absolute;
-    top: 25%;
-    left: 24%;
-    width: 52%;
-    
-font: normal normal normal 20px Segoe UI;
-  text-align: justify;
-}
-#TE2{
-    position: absolute;
-    top: 50%;
-    left: 23%;
-}
 
-#TE3{
-    position: absolute;
-    top: 116%;
-    left: 38%;
-}
-ul{
+  body {
 
-    list-style-type: disc;
-}
-ul:not(.browser-default)>li{
+    background-color: rgb(231, 231, 231);
+  }
+
+
+  h1 {
+    color: rgb(255, 255, 255);
+  }
+
+  h2 {
+    color: rgb(46, 46, 46);
+    font-size: xx-large;
+  }
+
+  h3 {
+    color: rgb(204, 117, 192);
+    font-size: xx-large;
+    font-size: 4.2rem;
+    text-align: center;
+
+  }
+
+  .TitleAndName {
     
-    list-style-type: disc;
-}
-#LISTA{
-    list-style-type: disc;
-    padding-left: 50px;
-    position: absolute;
-    top: 66%;
-    left: 22%;
-    width: 52%;
-    opacity: 1;
-font: normal normal normal 20px Segoe UI;
-  text-align: justify;
-}
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(204, 117, 192);
+    height: 35%;
 
-#LISTA2{
-    list-style-type: disc;
-    padding-left: 50px;
-    position: absolute;
-    top: 133%;
-    left: 22%;
-    width: 52%;
-    opacity: 1;
-font: normal normal normal 20px Segoe UI;
-  text-align: justify;
-}
-#FR{
-    height: 400px;
-    width: 500px;
-}
+  }
+
+  p {
+
+    font: "SEGOE UI";
+    font-size: 25;
+
+
+  }
+
+  .container {
+
+    padding-top: 20px;
+    text-align: justify;
+
+  }
+
+  .container-fluid {
+
+    padding-bottom: 30px;
+    text-align: justify;
+
+  }
+
+
+  .row {
+
+    box-sizing: border-box;
+    padding-bottom: 30px;
+  }
+
+  #Articulos {
+
+    background-color: rgb(195, 130, 107);
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+
+  }
+
+  #PuntosDeVenta {
+
+    background-color: rgb(72, 189, 150);
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+
+
+  }
+
+  #Reportes {
+
+    background-color: rgb(177, 160, 117);
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+
+  }
+
+  .contain {
+    object-fit: contain;
+  }
+  
+  #IM{
+    
+    text-align: center;
+  }
+  #Portada {
+
+    text-align: center;
+
+  }
