@@ -8,7 +8,7 @@ ventasCtrl.getArticulos= async(req,res)=>{
 ventasCtrl.crearArticulos= async(req,res)=>{
     const nuevoArticulo=new puntos_ventas(req.body);
     await nuevoArticulo.save()
-    res.send({message:'Punto de venta creado'});
+    res.send({nuevoArticulo});
 };
 ventasCtrl.getArticulo= async(req,res)=>{
     const item=await puntos_ventas.findById(req.params.id)

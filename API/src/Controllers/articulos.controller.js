@@ -8,7 +8,7 @@ articulosCtrl.getArticulos= async(req,res)=>{
 articulosCtrl.crearArticulos= async(req,res)=>{
     const nuevoArticulo=new articulos(req.body);
     await nuevoArticulo.save()
-    res.send({message:'Articulo creado'});
+    res.send({nuevoArticulo});
 };
 articulosCtrl.getArticulo= async(req,res)=>{
     const item=await articulos.findById(req.params.id)

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { VentasService } from 'src/app/Servicios/ventas.service';
+import { NgForm } from '@angular/forms';
 import {ServicioArticulosService} from '../../Servicios/servicio-articulos.service';
 
 @Component({
@@ -10,19 +11,41 @@ import {ServicioArticulosService} from '../../Servicios/servicio-articulos.servi
 })
 export class AddStoreComponent implements OnInit {
 
-  constructor(public articuloService: ServicioArticulosService,private router:Router,private route:ActivatedRoute) { }
+  constructor(public ventasService: VentasService,public articuloService: ServicioArticulosService,private router:Router,private route:ActivatedRoute) { }
   ID:any;
+  
+  NAME:String="";
+  DESCRIPCION:String="";
+  
+  ar:any =[];
   ngOnInit(): void {
   this.getArticulos();
   }
+  
+  IDV(ID:any){
+    return ID._id
+  }
   getArticulos(){
     
-    this.articuloService.getArticulos().subscribe(
+    this.ID=this.route.snapshot.paramMap.get('Uid')
+    this.articuloService.getArticulosUser(this.ID).subscribe(
       res=>{
-        this.articuloService.art=res;
-        console.log(this.articuloService.art);
+        var array=res
+        
+        array.forEach(element => {
+          console.log(element);
+
+          this.articuloService.getArticuloID(element).subscribe(
+            res =>{
+              
+          this.ar.push(res);
+            }
+          );
+        });
+       
       }
     );
+    this.articuloService.art=this.ar;
   }
   
   CANCEL(){
@@ -31,4 +54,35 @@ export class AddStoreComponent implements OnInit {
     
     this.router.navigate(['user/'+this.ID+'/Ventas']);
   }
+  
+ADD(form:NgForm){
+  this.ar=[];
+this.ID=this.route.snapshot.paramMap.get('Uid');
+  
+  var elements = (<HTMLInputElement[]><any>document.getElementsByName("CHEE"));
+  
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i].type == "checkbox") {
+        if (elements[i].checked) {
+            this.ar.push(elements[i].id);
+        }
+    }
+}
+
+ this.ventasService.newVenta(this.NAME,this.DESCRIPCION,this.ar).subscribe(
+  res=>{
+    
+    this.ventasService.addVentasUser(this.ID,res.nuevoArticulo._id).subscribe(
+      res=>{
+          console.log(res);
+          
+this.ID=this.route.snapshot.paramMap.get('Uid');
+ this.router.navigate(['user/'+this.ID+'/Ventas']);
+      }
+    );
+  }
+);
+    
+    
+}
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent} from './componentes/login/login.component';
 import { RegisterComponent} from './componentes/register/register.component';
-
+import { HomepageComponent } from './componentes/homepage/homepage.component';
 import { VentasComponent} from './componentes/ventas/ventas.component';
 
 import { AddStoreComponent} from './componentes/add-store/add-store.component';
@@ -17,6 +17,7 @@ import { EditItemComponent} from './componentes/edit-item/edit-item.component';
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'Register', component:RegisterComponent},
+  {path:'user/:Uid', component:HomepageComponent},
   {path:'user/:Uid/Ventas', component:VentasComponent},
   
   {path:'user/:Uid/Ventas/Add', component:AddStoreComponent},
@@ -32,7 +33,11 @@ const routes: Routes = [
   {path:'user/:Uid/Articulos/Add', component:AddItemComponent},
   {path:'Articulos/Add', component:AddItemComponent},
   
-  {path:'Articulos/Edit', component:EditItemComponent}
+  {path:'Articulos/Edit', component:EditItemComponent},
+  
+  {path:'user/:Uid/Articulos/Edit/:IDA', component:EditItemComponent},
+  
+  {path:'user/:Uid/Ventas/Edit/:IDA', component:EditStoreComponent}
 
 
 ];

@@ -12,6 +12,13 @@ export class HeaderComponent implements OnInit {
   ID:any;
   ngOnInit(): void {
   }
+  
+  paginaHome(){
+    
+    this.ID=this.route.snapshot.paramMap.get('Uid')
+    
+    this.router.navigate(['user/'+this.ID]);
+  }
   paginaVen(){
     
     this.ID=this.route.snapshot.paramMap.get('Uid')

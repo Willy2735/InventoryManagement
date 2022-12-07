@@ -43,7 +43,8 @@ import { EditStoreComponent } from './componentes/edit-store/edit-store.componen
     AddItemComponent,
     AddStoreComponent,
     EditItemComponent,
-    EditStoreComponent
+    EditStoreComponent,
+    
   ],
   imports: [
     BrowserModule,

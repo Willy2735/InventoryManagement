@@ -15,17 +15,27 @@ export class ItemSquareComponent implements OnInit {
   ngOnInit(): void {
   }
   EDIT(){
-
+    
+    this.ID=this.route.snapshot.paramMap.get('Uid')
+    
+    this.router.navigate(['user/'+this.ID+'/Articulos/Edit/'+this.articulo._id]);
   }
   BORRAR(){
 
     if(confirm("¿Seguro que quieres borrar "+this.articulo.nombre+"?")){
       
     this.ID=this.route.snapshot.paramMap.get('Uid')
-      this.articuloService.deleteArticulo(this.ID,this.articulo.id)
+      this.articuloService.deleteArticulo(this.ID,this.articulo._id).subscribe(
+        res=>{
+          console.log(res);
+        }
+      );
       
-    
-    this.router.navigate(['user/'+this.ID+'/Articulos']);
     }
+    this.router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
+
+      this.router.navigate(['user/'+this.ID+'/Articulos']);
+    
+    })
     }
 }

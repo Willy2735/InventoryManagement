@@ -1,23 +1,26 @@
 
 
+<form #EDITSFORM="ngForm" (ngSubmit)="ACTUALIZAR(EDITSFORM)" >
 <p id="TITULO">Nuevo Punto de Venta:</p>
 <p class="TXT_LABEL" id="NM">Nombre:</p>
-<input type="text" id="NOMBRE_ART">
+<input type="text" id="NOMBRE_ART" name="NAME" [(ngModel)]="NAME">
 <p class="TXT_LABEL" id="DESC">Descripcion:</p>
-<input type="text" id="DESC_ART">
+<input type="text" id="DESC_ART" name="DESCRIPCION" [(ngModel)]="DESCRIPCION">
 <p class="TXT_LABEL" id="PV">Articulos:</p>
 <div id="PVS">
     
     
+    <input type="hidden" name="ARREGLO"[(ngModel)]="ar">
 <div *ngFor="let articulo of articuloService.art" id="CB">
-    <input class="CBS" type="checkbox" value="{{articulo.id}}"/> {{articulo.nombre}}
+    <input class="CBS" type="checkbox" [id]="IDv(articulo)" name="CHEE" [checked]="CHECKS(ar,articulo)"/> {{articulo.nombre}}
  </div>
 </div>
     
-<button id="BTN_ADD">Agregar Punto de Venta</button>
-<button id="BTN_CANCEL">Cancelar</button>
+<button id="BTN_ADD" type="submit()">Agregar Punto de Venta</button>
+<button id="BTN_CANCEL" (click)="CANCEL()">Cancelar</button>
 <p class="TXT_LABEL" id="IM">Imagen</p>
-<img src="../../../assets/imagenes/ITEM.png" id="IMG">
+<img src={{IMAG}} id="IMG">
 
 <button id="BTN_IMG">Subir Imagen</button>
+</form>
 <app-header></app-header>

@@ -1,30 +1,35 @@
 
-
+<form #EDITFORM="ngForm" (ngSubmit)="ACTUALIZAR(EDITFORM)" >
 <p id="TITULO">Editar Articulo:</p>
 <p class="TXT_LABEL" id="NM">Nombre:</p>
-<input type="text" id="NOMBRE_ART">
+<input type="text" id="NOMBRE_ART" name="NAME" [(ngModel)]="NAME">
 <p class="TXT_LABEL" id="DESC">Descripcion:</p>
-<input type="text" id="DESC_ART">
+<input type="text" id="DESC_ART" name="DESCRIPCION" [(ngModel)]="DESCRIPCION">
 <p class="TXT_LABEL" id="PR" >Precio:</p>
 
-<input type="text" id="PRECIO_ART">
+<input type="text" id="PRECIO_ART" name="PRECIO" [(ngModel)]="PRECIO">
 
 <p class="TXT_LABEL" id="CT" >Cantidad:</p>
 
-<input type="text" id="Cantidad_ART">
+<input type="text" id="Cantidad_ART" name="CANTIDAD" [(ngModel)]="CANTIDAD">
+
+<p class="TXT_LABEL" id="TP" >Categoria:</p>
+
+<input type="text" id="Tipo_ART" name="TIPOART" [(ngModel)]="TIPOART">
 <p class="TXT_LABEL" id="PV">Puntos de venta:</p>
 <div id="PVS">
+    <input type="hidden" name="ARREGLO"[(ngModel)]="ar">
     
-    
-<div *ngFor="let venta of ventasService.VENTAS" id="CB">
-    <input class="CBS" type="checkbox" value="{{venta.id}}"/> {{venta.nombre}}
+<div *ngFor="let venta of ventasService.VENTAS" id="CB"  >
+    <input class="CBS" type="checkbox" [id]="ID(venta)" name="CHEE" [checked]="CHECKS(ar,venta)"/> {{venta.nombre}} 
  </div>
 </div>
     
-<button id="BTN_ADD">Agregar Articulo</button>
-<button id="BTN_CANCEL">Cancelar</button>
+<button type="submit()" id="BTN_ADD">Editar Articulo</button>
+<button id="BTN_CANCEL"(click)="CANCEL()">Cancelar</button>
 <p class="TXT_LABEL" id="IM">Imagen</p>
-<img src="../../../assets/imagenes/ITEM.png" id="IMG">
+<img src={{IMAG}} id="IMG">
 
 <button id="BTN_IMG">Subir Imagen</button>
+</form>
 <app-header></app-header>

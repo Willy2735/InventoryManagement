@@ -76,32 +76,34 @@ userCtrl.deleteArticuloUser= async(req,res)=>{
     const item=await users.findById(req.params.id)
     var art=item.articulos;
     const idaAA=req.params.idA
+    
     art.forEach(element => {
         
-        if(element==idaAA){
+        if(element.toString()==idaAA){
             art.splice(art.indexOf(element),1)
            
-        articulos.findByIdAndDelete(element.id)
         }
         
     });
     item.articulos=art;
     item.save();
-    res.send({message:'Articulo eliminado',idaAA});
+    articulos.findByIdAndDelete(idaAA);
+    res.send({message:'Articulo eliminado',art});
     
 };
 userCtrl.deleteVentaUser= async(req,res)=>{
     const item=await users.findById(req.params.id)
     const ventas=item.puntos_ventas;
-    const venta={};
+    const IDAAAA=req.params.idV;
     ventas.forEach(element => {
-        if(element.id==req.idV){
-            ventas.splice(ventas.indexOf(element),1)
-           
-            puntos_ventas.findByIdAndDelete(element.id)
+        if(element.toString()==IDAAAA){
+            ventas.splice(ventas.indexOf(element),1);
         }
     });
-    res.json(venta)
+    item.puntos_ventas=ventas;
+    item.save();
+    puntos_ventas.findByIdAndDelete(IDAAAA)
+    res.json(ventas)
 };
 userCtrl.LOGIN= async(req,res)=>{
     const user= new users(req.body);

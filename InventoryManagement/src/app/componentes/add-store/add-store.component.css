@@ -150,6 +150,9 @@ opacity: 1;
     position: absolute;
     top: 66%;
     left: 25%;
+    height: 200px;
+    overflow: auto;
+    
 }
 #IM{
     

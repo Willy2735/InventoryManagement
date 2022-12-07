@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         console.log(this.LOG_MG)
         if(this.LOG_MG.message=="LOGIN EXITOSO"){
           
-    this.router.navigate(['user/'+this.LOG_MG.e._id+'/Ventas']);
+    this.router.navigate(['user/'+this.LOG_MG.e._id]);
         }
       } 
     );

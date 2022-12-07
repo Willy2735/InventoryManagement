@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import {ServicioArticulosService} from '../../Servicios/servicio-articulos.service';
 @Component({
@@ -10,11 +10,14 @@ export class ItemListComponent implements OnInit {
   constructor(public articuloService: ServicioArticulosService,private router:Router,private route:ActivatedRoute) { }
   ID:any;
   
+  @Output('ngInit') initEvent: EventEmitter<any> = new EventEmitter();
   ar:any =[];
   ngOnInit(): void {
-  this.getArticulos();
+  
+      this.getArticulos()
   }
-  getArticulos(){
+  
+ async getArticulos(){
     
     this.ID=this.route.snapshot.paramMap.get('Uid')
     this.articuloService.getArticulosUser(this.ID).subscribe(
@@ -23,6 +26,7 @@ export class ItemListComponent implements OnInit {
         
         array.forEach(element => {
           console.log(element);
+
           this.articuloService.getArticuloID(element).subscribe(
             res =>{
               
@@ -40,5 +44,6 @@ export class ItemListComponent implements OnInit {
     this.ID=this.route.snapshot.paramMap.get('Uid')
     
     this.router.navigate(['user/'+this.ID+'/Articulos/Add']);
+    console.log("TEST")
   }
 }
