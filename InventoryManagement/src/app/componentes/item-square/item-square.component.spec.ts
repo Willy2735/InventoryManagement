@@ -15,6 +15,7 @@ describe('ItemSquareComponent', () => {
     fixture = TestBed.createComponent(ItemSquareComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    //a
   });
 
   it('should create', () => {

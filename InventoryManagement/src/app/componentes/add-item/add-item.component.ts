@@ -57,12 +57,17 @@ this.ID=this.route.snapshot.paramMap.get('Uid');
  this.articuloService.newArticulo(this.NAME,this.DESCRIPCION,this.PRECIO,this.CANTIDAD,this.TIPOART,this.ar).subscribe(
   res=>{
     
-    this.articuloService.addArticulosUser(this.ID,res.nuevoArticulo._id).subscribe(
+    console.log(res.nuevoArticulo._id);      
+    this.ventasService.addArticuloVenta("1",res.nuevoArticulo._id,res.nuevoArticulo.puntos_ventas).subscribe(
       res=>{
-          console.log(res);
-          
-this.ID=this.route.snapshot.paramMap.get('Uid');
- this.router.navigate(['user/'+this.ID+'/Articulos']);
+    
+    this.articuloService.addArticulosUser(this.ID,res._id).subscribe(
+      res=>{
+        
+      this.ID=this.route.snapshot.paramMap.get('Uid');
+      this.router.navigate(['user/'+this.ID+'/Articulos']);
+      }
+    );
       }
     );
   }

@@ -25,17 +25,22 @@ export class ItemSquareComponent implements OnInit {
     if(confirm("¿Seguro que quieres borrar "+this.articulo.nombre+"?")){
       
     this.ID=this.route.snapshot.paramMap.get('Uid')
+    this.articuloService.removeVentaArticulo(this.articulo._id).subscribe(
+      res=>{
+          
       this.articuloService.deleteArticulo(this.ID,this.articulo._id).subscribe(
         res=>{
-          console.log(res);
-        }
-      );
-      
-    }
+     
     this.router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
 
       this.router.navigate(['user/'+this.ID+'/Articulos']);
     
     })
+        }
+      );
+      }
+    )
+      
+    }
     }
 }

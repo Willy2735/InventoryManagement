@@ -94,16 +94,30 @@ ACTUALIZAR(form:NgForm){
         }
     }
 }
+
+console.log(this.ar);
+this.articuloService.removeVentaArticulo(this.IDA).subscribe(
+  res=>{
+      
 this.articuloService.updateArticulo(this.IDA,this.NAME,this.DESCRIPCION,this.PRECIO,this.CANTIDAD,this.TIPOART,this.IMAG,this.ar).subscribe(
   res=>{
     
-    console.log(res);
+    console.log(res) 
+    this.ventasService.addArticuloVenta("1",this.IDA,res.puntos_ventas).subscribe(
+        res=>{
+             
+          
+        console.log(res);
+    this.IDU=this.route.snapshot.paramMap.get('Uid')
+        
+    this.router.navigate(['user/'+this.IDU+'/Articulos']);
+        }
+)
+  }
+)
   }
 )
 
-this.IDU=this.route.snapshot.paramMap.get('Uid')
-    
-this.router.navigate(['user/'+this.IDU+'/Articulos']);
 }
 
 CANCEL(){

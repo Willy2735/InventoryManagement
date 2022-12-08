@@ -35,10 +35,12 @@ export class VentasService {
     var URL='http://localhost:3000/api/usuario/'+IDU+'/Puntos_De_Venta/'+ID;  
     return this.http.delete<[]>(URL);
   }
-  addArticuloVenta(IDV:string,IDA:string){
+  addArticuloVenta(IDV:string,IDA:string,ART:any[]){
     
     var URL='http://localhost:3000/api/puntos_ventas/'+IDV+'/articulos/'+IDA;  
-    return this.http.delete<[]>(URL);
+    return this.http.post<any>(URL,{
+      "ARTS":ART
+    });
   }
   updateVenta(ID:string,NAME:String,DESCRIPCION:String,VENT:any[]){
     
@@ -55,7 +57,7 @@ export class VentasService {
     return this.http.post<any>(URL,{
       "nombre":NAME,
       "Descripcion":DESCRIPCION,
-      "puntos_ventas": VENT
+      "articulos": VENT
     });
   }
   
@@ -63,5 +65,11 @@ export class VentasService {
       
     var URL='http://localhost:3000/api/usuario/'+ID+'/Puntos_De_Venta/'+IDA
     return this.http.post<[]>(URL,{});
+  }
+  
+  removeArticuloVenta(IDV:string){
+    
+    var URL='http://localhost:3000/api/puntos_ventas/'+IDV+'/articulos';  
+    return this.http.delete<any>(URL);
   }
 }

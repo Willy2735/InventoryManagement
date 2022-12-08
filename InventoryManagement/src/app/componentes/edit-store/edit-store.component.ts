@@ -87,17 +87,25 @@ ACTUALIZAR(form:NgForm){
         }
     }
 }
-
-console.log(this.ar);
-this.ventasService.updateVenta(this.IDv,this.NAME,this.DESCRIPCION,this.ar).subscribe(
+this.ventasService.removeArticuloVenta(this.IDv).subscribe(
   res=>{
-    
-  }
-)
-
+    this.ventasService.updateVenta(this.IDv,this.NAME,this.DESCRIPCION,this.ar).subscribe(
+      res=>{
+          this.articuloService.addVentaArticulo("1",this.IDv,res.articulos).subscribe(
+            res=>{
+                
 this.ID=this.route.snapshot.paramMap.get('Uid')
     
 this.router.navigate(['user/'+this.ID+'/Ventas']);
+            }
+          )
+      }
+    )
+  }
+)
+console.log(this.ar);
+
+
 }
 
 CANCEL(){

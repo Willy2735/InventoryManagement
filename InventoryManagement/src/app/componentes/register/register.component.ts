@@ -39,6 +39,8 @@ export class RegisterComponent implements OnInit {
     );
     
     this.router.navigate(['Ventas']);
+  }else{
+    alert("Los passwords no coinciden")
   }
   }
 }

@@ -61,4 +61,19 @@ export class ServicioArticulosService {
     var URL='http://localhost:3000/api/usuario/'+ID+'/articulos/'+IDA
     return this.http.post<[]>(URL,{});
   }
+  
+  addVentaArticulo(IDV:string,IDA:string,ART:any[]){
+    
+    var URL='http://localhost:3000/api/articulos/'+IDV+'/Puntos_De_Venta/'+IDA;  
+    return this.http.post<any>(URL,{
+      "ARTS":ART
+    });
+  }
+  
+  removeVentaArticulo(IDV:string){
+    
+    var URL='http://localhost:3000/api/articulos/'+IDV+'/Puntos_De_Venta';  
+    return this.http.delete<any>(URL);
+  }
+
 }

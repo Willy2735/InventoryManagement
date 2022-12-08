@@ -23,19 +23,24 @@ export class StoreSquareComponent implements OnInit {
   BORRAR(){
 
     if(confirm("¿Seguro que quieres borrar "+this.venta.nombre+"?")){
-      
-    this.ID=this.route.snapshot.paramMap.get('Uid')
-      this.ventasService.deleteVenta(this.ID,this.venta._id).subscribe(
+      this.ventasService.removeArticuloVenta(this.venta._id).subscribe(
         res=>{
-          console.log(res);
-        }
-      );
+            
+    this.ID=this.route.snapshot.paramMap.get('Uid')
+    this.ventasService.deleteVenta(this.ID,this.venta._id).subscribe(
+      res=>{
+        console.log(res);
       
-    }
     this.router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
 
       this.router.navigate(['user/'+this.ID+'/Ventas']);
     
     })
+      }
+    );
+        }
+      )
+      
+    }
     }
 }

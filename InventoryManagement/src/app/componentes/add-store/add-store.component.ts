@@ -54,6 +54,7 @@ this.ID=this.route.snapshot.paramMap.get('Uid');
     if (elements[i].type == "checkbox") {
         if (elements[i].checked) {
             this.ar.push(elements[i].id);
+               
         }
     }
 }
@@ -61,14 +62,19 @@ this.ID=this.route.snapshot.paramMap.get('Uid');
  this.ventasService.newVenta(this.NAME,this.DESCRIPCION,this.ar).subscribe(
   res=>{
     
-    this.ventasService.addVentasUser(this.ID,res.nuevoArticulo._id).subscribe(
+    this.articuloService.addVentaArticulo("1",res.nuevoArticulo._id,res.nuevoArticulo.articulos).subscribe(
       res=>{
-          console.log(res);
+        
+    console.log(res);   
+    this.ventasService.addVentasUser(this.ID,res._id).subscribe(
+      res=>{
           
 this.ID=this.route.snapshot.paramMap.get('Uid');
  this.router.navigate(['user/'+this.ID+'/Ventas']);
       }
     );
+      }
+    )
   }
 );
     

@@ -20,31 +20,33 @@ articulosCtrl.getVentas= async(req,res)=>{
     res.json(ventas)
 };
 articulosCtrl.addVenta= async(req,res)=>{
-    const item=await articulos.findById(req.params.id)
-    const tienda=await puntos_ventas.findById(req.params.idV)
-    item.puntos_ventas.push(tienda)
-    item.save();
-    res.json(item)
+    
+    const item1=await puntos_ventas.findById(req.params.idV)
+    const item=item1.articulos
+    await articulos.updateMany({_id:{$in:item}},{$addToSet:{"puntos_ventas": item1}})
+    res.json(item1)
+    
 };
 articulosCtrl.removeVenta= async(req,res)=>{
     const item=await articulos.findById(req.params.id)
     const art=item.puntos_ventas;
-    art.forEach(element => {
+    
+    const arr= await puntos_ventas.find({_id:{$in:art}})
+    arr.forEach(element => {
         
-        if(element.id==req.idA){
-            art.splice(art.indexOf(element),1)
-        }
+        element.articulos.splice(element.articulos.indexOf(item._id),1)
+        element.save()
         
     });
-    res.json(item)
+    res.json({"id":item,"ventas":arr})
 };
 articulosCtrl.deleteArticulo= async(req,res)=>{
     const item=await articulos.findByIdAndDelete(req.params.id)
     res.send({message:'Articulo eliminado',item});
 };
 articulosCtrl.updateArticulo= async(req,res)=>{
-    const item=await articulos.findByIdAndUpdate(req.params.id,req.body)
-    
-    res.send({message:'Articulo actualizado',item});
+    const item=await articulos.findByIdAndUpdate(req.params.id,req.body,{new:true})
+    item.save()
+    res.send(item);
 };
 module.exports=articulosCtrl
