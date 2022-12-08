@@ -1,6 +1,7 @@
 const ventasCtrl={}
 const puntos_ventas= require('../models/Puntos_Ventas.js')
-const articulos= require('../models/articulos.js')
+const articulos= require('../models/articulos.js');
+
 ventasCtrl.getArticulos= async(req,res)=>{
     const items=await puntos_ventas.find();
     res.json(items)
@@ -19,8 +20,8 @@ ventasCtrl.deleteArticulo= async(req,res)=>{
     res.send({message:'Punto de Venta eliminado',item});
 };
 ventasCtrl.updateArticulo= async(req,res)=>{
-    const item=await puntos_ventas.findByIdAndUpdate(req.params.id,req.body)
-    res.send({message:'Articulo actualizado',item});
+    const item=await puntos_ventas.findByIdAndUpdate(req.params.id,req.body,{new:true})
+    res.send(item);
 };
 
 ventasCtrl.getArticulos_V= async(req,res)=>{
@@ -29,22 +30,25 @@ ventasCtrl.getArticulos_V= async(req,res)=>{
     res.json(item1)
 };
 ventasCtrl.addArticulo= async(req,res)=>{
-    const item=await puntos_ventas.findById(req.params.id)
+    
     const item1=await articulos.findById(req.params.idA)
-    item.articulos.push(item1)
-    item.save();
-    res.json(item)
+    const item=item1.puntos_ventas
+    
+    await puntos_ventas.updateMany({_id:{$in:item}},{$addToSet:{"articulos": item1}})
+    res.json(item1)
+    
 };
 ventasCtrl.removeArticulo= async(req,res)=>{
     const item=await puntos_ventas.findById(req.params.id)
     const art=item.articulos;
-    art.forEach(element => {
+    
+    const arr= await articulos.find({_id:{$in:art}})
+    arr.forEach(element => {
         
-        if(element.id==req.idA){
-            art.splice(art.indexOf(element),1)
-        }
+        element.puntos_ventas.splice(element.puntos_ventas.indexOf(item._id),1)
+        element.save()
         
     });
-    res.json(item)
+    res.json({"id":item,"ventas":arr})
 };
 module.exports=ventasCtrl
